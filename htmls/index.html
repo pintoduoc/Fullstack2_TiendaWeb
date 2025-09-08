@@ -41,5 +41,21 @@
         <br>
         <p>¿Ya tienes una cuenta?</p>
         <a href="../htmls/login.html" class="btn btn-secondary">Inicia Sesión</a>
+
+
+
+        <!-- boton cerrar sesion -->
+         <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function cerrarSesion() {
+      // Borrar sesión del localStorage y sessionStorage
+      localStorage.removeItem("sesionActiva");
+      sessionStorage.removeItem("sesionActiva");
+
+      // Redirigir al login
+      window.location.href = "index.html";
+    }
+  </script>
     </body>
 </html>

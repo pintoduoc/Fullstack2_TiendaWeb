@@ -1,0 +1,110 @@
+/* estilo general */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* contenedor principal */
+.contenedor {
+  text-align: center;
+  padding: 20px;
+}
+
+/* titulo */
+.titulo {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #f1f1f1;
+}
+
+/* contenedor de las tarjetas */
+.planes {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* tarjetas */
+.card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* imagen de referencia */
+.img-placeholder {
+  background: #333;
+  color: #bbb;
+  border-radius: 8px;
+  padding: 40px;
+  margin-bottom: 15px;
+}
+
+/* precio */
+.precio {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #ffcc00;
+}
+
+/* lista */
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.card ul li {
+  margin: 8px 0;
+}
+
+/* boton comprar */
+.btn-comprar {
+  background: #ff4081;
+  border: none;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.btn-comprar:hover {
+  background: #e73370;
+}
+
+/* boton volver */
+.volver {
+  margin-top: 40px;
+}
+
+.btn-volver {
+  text-decoration: none;
+  background: #444;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-volver:hover {
+  background: #666;
+}
