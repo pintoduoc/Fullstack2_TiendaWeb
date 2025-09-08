@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmación de Pago</title>
+  <link rel="stylesheet" href="../css/pago_confirmacion.css">
+</head>
+<body>
+  <div class="confirmacion">
+    <h1>🎉 ¡Pago Exitoso!</h1>
+    <p id="mensaje-confirmacion"></p>
+    <p>Se ha enviado un correo de confirmación con los detalles de tu plan.</p>
+    <a href="index.html" class="btn-volver">⟵ Volver al Inicio</a>
+  </div>
+
+  <script>
+    const planComprado = localStorage.getItem("plan");
+    const mensaje = document.getElementById("mensaje-confirmacion");
+
+    if (planComprado) {
+      mensaje.textContent = `Gracias por tu compra. Tu suscripción al plan ${planComprado} ha sido activada correctamente.`;
+    } else {
+      mensaje.textContent = "No se encontró ninguna suscripción activa.";
+    }
+  </script>
+</body>
+</html>
