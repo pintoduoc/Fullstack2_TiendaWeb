@@ -1,0 +1,28 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+p, a, button {
+  font-family: 'Lato', sans-serif;
+}
+
+.btn-primary {
+  background-color: #8B0000;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #a60000;
+}
+
+.btn-secondary {
+  background-color: #444;
+  border: none;
+}
+.btn-secondary:hover {
+  background-color: #666;
+}
+
+footer {
+  font-size: 0.9rem;
+  color: #ccc;
+}

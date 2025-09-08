@@ -1,51 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión |ChileHub</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg" style="background-color: #8B0000;">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="../htmls/index.html">
-                    <img src="../images/ChileHub_Logo.png" alt="ChileHub" width="150">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="../htmls/index.html">Inicio</a>
-                        <a class="nav-link" href="../htmls/registro.html">Registro</a>
-                        <a class="nav-link active" aria-current="page" href="../htmls/login.html">Iniciar Sesión</a>
-                        <a class="nav-link" href="../htmls/sobre_nosotros.html">Sobre Nosotros</a>
-                        <a class="nav-link" href="../htmls/listado_contenido.html">Listado de Contenido</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login / Registro | ChileHub</title>
 
-<body>
-    
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Login y Registro</title>
-  <!-- bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- estilos -->
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tu CSS con fondo -->
   <link rel="stylesheet" href="../css/iniciosession.css">
 </head>
+
 <body>
-  <div class="d-flex justify-content-center align-items-center vh-100">
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#8B0000;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="../images/ChileHub_Logo.png" alt="ChileHub" width="150">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="index.html">Inicio</a>
+          <a class="nav-link" href="login.html#registro">Registro</a>
+          <a class="nav-link active" href="login.html#login">Iniciar Sesión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <main class="d-flex justify-content-center align-items-center vh-100">
     <div class="card shadow-lg p-4 rounded-4 form-box">
       <h2 id="formTitle" class="text-center mb-3">Iniciar Sesión</h2>
 
-      <!-- formulario login -->
+      <!-- LOGIN -->
       <div id="loginForm">
         <div class="mb-3">
           <input type="text" id="loginUsuario" class="form-control" placeholder="Usuario" required>
@@ -57,13 +52,13 @@
           <input type="checkbox" class="form-check-input" id="recordarSesion">
           <label for="recordarSesion" class="form-check-label">Recordar sesión</label>
         </div>
-        <button class="btn btn-primary w-100" onclick="iniciarSesion()">Entrar</button>
-        <p class="text-center mt-3">
-          <a href="#" onclick="mostrarRegistro()">¿No tienes cuenta? Regístrate</a>
+        <button class="btn btn-primary w-100" id="btnEntrar">Entrar</button>
+        <p class="text-center mt-3 mb-0">
+          <a href="#registro" id="linkIrRegistro">¿No tienes cuenta? Regístrate</a>
         </p>
       </div>
 
-      <!-- formulario registro -->
+      <!-- REGISTRO -->
       <div id="registerForm" style="display:none;">
         <div class="mb-3">
           <input type="email" id="regCorreo" class="form-control" placeholder="Correo" required>
@@ -77,107 +72,98 @@
         <div class="mb-3">
           <input type="tel" id="regTelefono" class="form-control" placeholder="Teléfono" required>
         </div>
-        <button class="btn btn-success w-100" onclick="registrar()">Registrar</button>
-        <p class="text-center mt-3">
-          <a href="#" onclick="mostrarLogin()">¿Ya tienes cuenta? Inicia sesión</a>
+        <button class="btn btn-success w-100" id="btnRegistrar">Registrar</button>
+        <p class="text-center mt-3 mb-0">
+          <a href="#login" id="linkIrLogin">¿Ya tienes cuenta? Inicia sesión</a>
         </p>
       </div>
 
-      <div id="mensaje" class="text-center mt-2"></div>
+      <div id="mensaje" class="text-center mt-3"></div>
 
-      <!-- boton volver al inicio -->
+      <!-- Volver -->
       <div class="text-center mt-4">
-        <a href="../htmls/index.html" class="btn btn-outline-secondary w-100">⬅ Volver al Inicio</a>
+        <a href="index.html" class="btn btn-outline-secondary w-100">⬅ Volver al Inicio</a>
       </div>
     </div>
-  </div>
+  </main>
 
-  <!--bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../JS/inicioscar.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
   <script>
-    const mensaje = document.getElementById("mensaje");
-    
+    const mensaje = document.getElementById('mensaje');
+
     function mostrarRegistro() {
-      document.getElementById("loginForm").style.display = "none";
-      document.getElementById("registerForm").style.display = "block";
-      document.getElementById("formTitle").innerText = "Registro";
-      mensaje.innerText = "";
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('registerForm').style.display = 'block';
+      document.getElementById('formTitle').innerText = 'Registro';
+      mensaje.textContent = '';
     }
 
     function mostrarLogin() {
-      document.getElementById("loginForm").style.display = "block";
-      document.getElementById("registerForm").style.display = "none";
-      document.getElementById("formTitle").innerText = "Iniciar Sesión";
-      mensaje.innerText = "";
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('registerForm').style.display = 'none';
+      document.getElementById('formTitle').innerText = 'Iniciar Sesión';
+      mensaje.textContent = '';
     }
 
-    function registrar() {
-      const correo = document.getElementById("regCorreo").value;
-      const usuario = document.getElementById("regUsuario").value;
-      const password = document.getElementById("regPassword").value;
-      const telefono = document.getElementById("regTelefono").value;
+    function syncWithHash() {
+      if (location.hash === '#registro') mostrarRegistro();
+      else mostrarLogin();
+    }
+
+    window.addEventListener('hashchange', syncWithHash);
+    document.addEventListener('DOMContentLoaded', () => {
+      const ses = JSON.parse(localStorage.getItem('sesionActiva')) || JSON.parse(sessionStorage.getItem('sesionActiva'));
+      if (ses) { window.location.href = 'index.html'; return; }
+      syncWithHash();
+    });
+
+    document.getElementById('btnRegistrar').addEventListener('click', () => {
+      const correo = document.getElementById('regCorreo').value.trim();
+      const usuario = document.getElementById('regUsuario').value.trim();
+      const password = document.getElementById('regPassword').value;
+      const telefono = document.getElementById('regTelefono').value.trim();
 
       if (password.length < 8) {
-        mensaje.className = "text-danger";
-        mensaje.innerText = "La contraseña debe tener al menos 8 caracteres.";
+        mensaje.className = 'text-danger';
+        mensaje.textContent = 'La contraseña debe tener al menos 8 caracteres.';
         return;
       }
 
       const usuarioData = { correo, usuario, password, telefono };
-      localStorage.setItem("usuarioData", JSON.stringify(usuarioData));
-
-      mensaje.className = "text-success";
-      mensaje.innerText = "Registro exitoso. Ahora puedes iniciar sesión.";
+      localStorage.setItem('usuarioData', JSON.stringify(usuarioData));
+      mensaje.className = 'text-success';
+      mensaje.textContent = 'Registro exitoso. Ahora puedes iniciar sesión.';
+      location.hash = '#login';
       mostrarLogin();
-    }
+    });
 
-    function iniciarSesion() {
-      const usuario = document.getElementById("loginUsuario").value;
-      const password = document.getElementById("loginPassword").value;
-      const recordar = document.getElementById("recordarSesion").checked;
+    document.getElementById('btnEntrar').addEventListener('click', () => {
+      const usuario = document.getElementById('loginUsuario').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      const recordar = document.getElementById('recordarSesion').checked;
 
-      const usuarioData = JSON.parse(localStorage.getItem("usuarioData"));
+      const usuarioData = JSON.parse(localStorage.getItem('usuarioData'));
 
       if (!usuarioData) {
-        mensaje.className = "text-danger";
-        mensaje.innerText = "No hay usuarios registrados.";
+        mensaje.className = 'text-danger';
+        mensaje.textContent = 'No hay usuarios registrados.';
         return;
       }
 
       if (usuario === usuarioData.usuario && password === usuarioData.password) {
-        mensaje.className = "text-success";
-        mensaje.innerText = "Sesión iniciada correctamente.";
-
-        if (recordar) {
-          localStorage.setItem("sesionActiva", JSON.stringify(usuarioData));
-        } else {
-          sessionStorage.setItem("sesionActiva", JSON.stringify(usuarioData));
-        }
-
-        // redirige a la pagina
-        setTimeout(() => {
-          window.location.href = "../htmls/index.html";
-        }, 1000);
-
+        mensaje.className = 'text-success';
+        mensaje.textContent = 'Sesión iniciada correctamente.';
+        const payload = { usuario: usuarioData.usuario, correo: usuarioData.correo };
+        if (recordar) localStorage.setItem('sesionActiva', JSON.stringify(payload));
+        else sessionStorage.setItem('sesionActiva', JSON.stringify(payload));
+        setTimeout(()=> window.location.href = 'index.html', 500);
       } else {
-        mensaje.className = "text-danger";
-        mensaje.innerText = "Usuario o contraseña incorrectos.";
+        mensaje.className = 'text-danger';
+        mensaje.textContent = 'Usuario o contraseña incorrectos.';
       }
-    }
-
-    window.onload = function() {
-      const sesionActiva = JSON.parse(localStorage.getItem("sesionActiva")) || JSON.parse(sessionStorage.getItem("sesionActiva"));
-      if (sesionActiva) {
-        // si ya hay sesion activa, tambien redirige
-        window.location.href = "../htmls/index.html";
-      }
-    }
+    });
   </script>
-
-</body>
-
-
-
 </body>
 </html>
