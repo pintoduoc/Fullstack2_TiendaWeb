@@ -48,6 +48,7 @@
           <a class="nav-link text-warning fw-semibold" href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
           <a class="nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
           <a class="nav-link" href="listado_contenido.html">Listado de Contenido</a>
+          <a class="nav-link" href="subs.html">¿Quieres Premium?</a>
         </div>
       </div>
     </div>
@@ -64,6 +65,27 @@
     <a href="login.html#login" class="btn btn-secondary me-2">Inicia Sesión</a>
     <!-- Botón cerrar sesión también aquí -->
     <button class="btn btn-danger" onclick="cerrarSesion()">Cerrar Sesión</button>
+
+      <!-- boton subs -->
+   <br>
+   <br>
+   <p id="texto-subs">¿Quieres acceder a contenido exclusivo? ¡Suscríbete ahora!</p>
+   <a id="btn-subs" class="btn btn-warning" href="../htmls/subs.html">Suscribirse</a>
+  <script>
+    // Ocultar el texto y el botón de suscripción inicialmente
+    document.getElementById('texto-subs').style.display = 'none';
+    document.getElementById('btn-subs').style.display = 'none';
+    // Función para mostrar el texto y el botón de suscripción
+    function mostrarTextoBtnSubs() {
+      const textoSubs = document.getElementById('texto-subs');
+      const btnSubs = document.getElementById('btn-subs');
+
+      textoSubs.style.display = 'block';
+      btnSubs.style.display = 'inline-block';
+    }
+    // Mostrar el texto y el botón de suscripción 10 segundos después de cargar la página
+    setTimeout(mostrarTextoBtnSubs, 10000);
+  </script>
   </main>
 
   <!-- FOOTER -->
